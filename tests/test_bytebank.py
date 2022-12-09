@@ -3,34 +3,34 @@ import pytest
 from pytest import mark
 
 class TestClass:
-    def test_quando_idade_recebe_13_03_2002_deve_retornar_22(self):
-        entrada = '13/03/2002'  #Given-contexto
-        esperado = 20
+    def test_when_age_receive_13_03_2002_should_return_22(self):
+        input = '13/03/2002'  #Given-contexto
+        expected = 20
 
-        Funcionario_teste = Funcionario('Teste', entrada, 1111)
-        resultado = Funcionario_teste.idade() #when-ação
-        assert resultado == esperado #Then-desfecho
+        staff_test = Funcionario('Teste', input, 1111)
+        output = staff_test.idade() #when-ação
+        assert output == expected #Then-desfecho
     
-    def test_quando_sobrenome_recebe_Lucas_Carvalho_deve_retornar_Carvalho(self):
-        entrada = 'Lucas Carvalho'
-        esperado = 'Carvalho'
+    def test_when_lastname_receive_Lucas_Carvalho_should_return_Carvalho(self):
+        input = 'Lucas Carvalho'
+        expected = 'Carvalho'
 
-        lucas = Funcionario(entrada, '11/11/2000', 1111)
-        resultado = lucas.sobrenome()
+        lucas = Funcionario(input, '11/11/2000', 1111)
+        output = lucas.sobrenome()
 
-        assert resultado == esperado
+        assert output == expected
     # @mark.skip
-    def test_quando_decrescimo_salario_recebe_10000_deve_retornar_9000(self):
-        entrada_salario = 100000
-        entrada_nome ='Paulo Bragança'
-        esperado = 90000
+    def test_when_wage_decrease_receive_10000_should_return_9000(self):
+        input_salario = 100000
+        input_nome ='Paulo Bragança'
+        expected = 90000
 
-        funcionario_teste = Funcionario (entrada_nome, '11/11/2000', entrada_salario)
+        staff_test = Funcionario (input_nome, '11/11/2000', input_salario)
 
-        funcionario_teste.decrescimo_salario()
-        resultado = funcionario_teste ._salario
+        staff_test.decrescimo_salario()
+        output = staff_test._salario
 
-        assert resultado == esperado
+        assert output == expected
 
     @mark.bonus_wage
     def test_when_bonus_wage_receive_1000_should_return_100(self):
